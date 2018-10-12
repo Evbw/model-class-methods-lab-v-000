@@ -1,4 +1,4 @@
-binding.pry
+
 
 class Captain < ActiveRecord::Base
   has_many :boats
@@ -18,4 +18,5 @@ class Captain < ActiveRecord::Base
   def self.non_sailors
     where.not("id IN (?)", self.sailors.pluck(:id))
   end
+  binding.pry
 end
